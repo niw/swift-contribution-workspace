@@ -1,5 +1,11 @@
-swift
-=====
+Swift contribution workspace
+============================
+
+This repository is a simple workspace include toolings on macOS
+for contributing to [Swift](https://github.com/apple/swift) and its related project.
+
+Usage
+-----
 
 Clone `swift` from GitHub.
 
@@ -32,10 +38,15 @@ which will removes all derived files.
 Build corelibs Foundation on Linux
 ----------------------------------
 
-Use Docker.
+Use Docker. Current directory is attached to `/src` volume.
 
     $ make docker
     root@c59f24826e6b:/build# /src/build-swift-corelibs-foundation.sh
+
+Build corelibs Foundation on Windows
+------------------------------------
+
+See [how-to documentations](docs/swift_corelibs_foundation_windows_build-ja.md) (currently Japanese only.)
 
 Build without scripts
 ---------------------
