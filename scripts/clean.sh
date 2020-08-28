@@ -2,7 +2,7 @@
 
 set -e
 
-for dir in $(find . -maxdepth 2 -name '.git'); do
+for dir in $(find . -mindepth 2 -maxdepth 2 -name '.git'); do
   basedir=$(dirname "$dir")
   pushd "$basedir" >/dev/null
   git clean -dffx
