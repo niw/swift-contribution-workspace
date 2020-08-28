@@ -29,6 +29,14 @@ To clean,
 
 which will removes all derived files.
 
+Build corelibs Foundation on Linux
+----------------------------------
+
+Use Docker.
+
+    $ make docker
+    root@c59f24826e6b:/build# /src/build-swift-corelibs-foundation.sh
+
 Build without scripts
 ---------------------
 
