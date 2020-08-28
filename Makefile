@@ -11,6 +11,7 @@ update: swift
 .PHONY: clean
 clean:
 	./scripts/clean.sh
+	rm -f .docker-build
 
 .PHONY: build
 build:

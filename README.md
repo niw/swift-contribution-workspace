@@ -39,6 +39,8 @@ Build corelibs Foundation on Linux
 ----------------------------------
 
 Use Docker. Current directory is attached to `/src` volume.
+This is very fast because it is using nightly Swift toolchain and not build Swift itself.
+To forcibly update Docker image, delete `.docker-build`.
 
     $ make docker
     root@c59f24826e6b:/src# /scripts/build-swift-corelibs-foundation.sh
