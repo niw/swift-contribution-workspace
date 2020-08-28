@@ -10,11 +10,11 @@ update: swift
 
 .PHONY: clean
 clean:
-	./clean.sh
+	./scripts/clean.sh
 
 .PHONY: build
 build:
-	./build.sh
+	./scripts/build.sh
 
 .PHONY: docker-build
 docker-build: .docker-build
@@ -29,4 +29,4 @@ docker: docker-build
 
 .PHONY: build-toolchain
 build-toolchain:
-	./build-toolchain.sh
+	./scripts/build-toolchain.sh
