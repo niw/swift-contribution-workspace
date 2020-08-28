@@ -25,4 +25,4 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /build
 
 VOLUME /src
-WORKDIR /build
+WORKDIR /src

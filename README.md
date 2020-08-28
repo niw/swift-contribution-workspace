@@ -41,7 +41,7 @@ Build corelibs Foundation on Linux
 Use Docker. Current directory is attached to `/src` volume.
 
     $ make docker
-    root@c59f24826e6b:/build# /src/build-swift-corelibs-foundation.sh
+    root@c59f24826e6b:/src# /scripts/build-swift-corelibs-foundation.sh
 
 Build corelibs Foundation on Windows
 ------------------------------------
