@@ -2,7 +2,7 @@
 
 # Built corelibs Foundation and run test using existing toolchain.
 
-set -e
+set -euo pipefail
 
 # Remove duplicates from toolchain.
 

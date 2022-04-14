@@ -1,0 +1,13 @@
+diff --git a/utils/swift_build_support/swift_build_support/products/backdeployconcurrency.py b/utils/swift_build_support/swift_build_support/products/backdeployconcurrency.py
+index 17eb6931359..0bca7d467dc 100644
+--- a/utils/swift_build_support/swift_build_support/products/backdeployconcurrency.py
++++ b/utils/swift_build_support/swift_build_support/products/backdeployconcurrency.py
+@@ -122,7 +122,7 @@ class BackDeployConcurrency(cmake_product.CMakeProduct):
+         self.cmake_options.define('LLVM_DIR:PATH', llvm_cmake_dir)
+ 
+         dest_dir = self.host_install_destdir(host_target)
+-        self.cmake_options.define('SWIFT_DEST_ROOT:PATH=', dest_dir)
++        self.cmake_options.define('SWIFT_DEST_ROOT:PATH', dest_dir)
+         self.cmake_options.define('SWIFT_HOST_VARIANT_SDK:STRING', 'OSX')
+         self.cmake_options.define('CMAKE_INSTALL_PREFIX', "")
+ 
