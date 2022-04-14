@@ -1,3 +1,6 @@
+# Mostly for casual `python` usages in build scripts.
+export PATH := $(abspath bin):$(PATH)
+
 .PHONY: all
 all: update
 
