@@ -68,7 +68,7 @@ To build swift, run
     $ brew install sccache
     $ export SCCACHE_CACHE_SIZE="50G"
     $ sccache --start-server
-    $ ./swift/utils/build-script --release-debuginfo --cmake-c-launcher $(which sccache) --cmake-cxx-launcher $(which sccache)
+    $ ./swift/utils/build-script --sccache --release-debuginfo
 
 To see cache,
 
