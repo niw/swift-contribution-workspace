@@ -1,4 +1,4 @@
-FROM swiftlang/swift:nightly-focal
+FROM swiftlang/swift:nightly-jammy
 
 RUN apt-get update && apt-get install -y \
     clang \

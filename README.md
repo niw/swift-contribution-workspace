@@ -84,9 +84,3 @@ To see cache,
     $ sccache -s
 
 The cache are available at `~/Library/Caches/Mozilla.sccache`.
-
-Due to <https://github.com/mozilla/sccache/pull/898>, sccache 0.2.14 and
-0.2.15 are not working with Swift build as described in the
-<https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md#troubleshooting-build-issues>.
-You need to build 0.2.16 which includes <https://github.com/mozilla/sccache/pull/959>
-from source code as of April 17, 2022.

@@ -1,7 +1,7 @@
 # Mostly for casual `python` usages in build scripts.
 export PATH := $(abspath bin):$(PATH)
 
-# Xcode 13.3.1 is not listed yet.
+# Use Xcode even if it's not listed yet.
 export SKIP_XCODE_VERSION_CHECK := 1
 
 # Use sccache
@@ -47,8 +47,10 @@ build: apply-patches
 		--skip-tvos \
 		--swift-darwin-supported-archs "$(shell uname -m)" \
 		--release-debuginfo \
-		--swift-disable-dead-stripping
+		--swift-disable-dead-stripping \
+		--bootstrapping=hosttools
 
+# TODO: This is not working.
 # Build Toolchain.
 # See comments in script first.
 .PHONY: build-toolchain
