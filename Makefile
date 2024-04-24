@@ -37,18 +37,21 @@ apply-patches: .apply-patches
 	touch "$@"
 
 # Simply build Swift.
-# See <https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md#the-actual-build>.
+# See comments in script.
 .PHONY: build
 build: apply-patches
-	swift/utils/build-script \
-		--skip-build-benchmarks \
-		--skip-ios \
-		--skip-watchos \
-		--skip-tvos \
-		--swift-darwin-supported-archs "$(shell uname -m)" \
-		--release-debuginfo \
-		--swift-disable-dead-stripping \
-		--bootstrapping=hosttools
+	scripts/build-swift.sh
+
+# The last `cmake -G Ninja` command is for building swift.
+# Useful to configure IDE such as CLion.
+# See <https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md#other-ides-setup>.
+.PHONY: cmake-options
+cmake-options: apply-patches
+	scripts/build-swift.sh --dry-run --reconfigure 2>/dev/null \
+	| grep "cmake -G Ninja" \
+	| tail -n 1 \
+	| sed -E 's/.*cmake -G Ninja //' \
+	| sed -E "s/'-D([^=]*)=([^']*)'/\-D\1=\"\2\"/g"
 
 # TODO: This is not working.
 # Build Toolchain.
