@@ -14,8 +14,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     ninja-build \
     pkg-config \
-    python \
-    python-six \
+    python3 \
     rsync \
     swig \
     systemtap-sdt-dev \
