@@ -53,13 +53,6 @@ cmake-options: apply-patches
 	| sed -E 's/.*cmake -G Ninja //' \
 	| sed -E "s/'-D([^=]*)=([^']*)'/\-D\1=\"\2\"/g"
 
-# TODO: This is not working.
-# Build Toolchain.
-# See comments in script first.
-.PHONY: build-toolchain
-build-toolchain: apply-patches
-	scripts/build-toolchain.sh
-
 .PHONY: docker-build
 docker-build: .docker-build
 
