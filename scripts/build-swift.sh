@@ -12,7 +12,7 @@ exec "$SWIFT_REPO_PATH/utils/build-script" \
 	--skip-ios \
 	--skip-watchos \
 	--skip-tvos \
-	--swift-darwin-supported-archs "$(shell uname -m)" \
+	--swift-darwin-supported-archs "$(uname -m)" \
 	--release-debuginfo \
 	--swift-disable-dead-stripping \
 	--bootstrapping=hosttools \
