@@ -12,11 +12,11 @@ export SCCACHE_CACHE_SIZE := 50GB
 all: update
 
 swift:
-	git clone --depth=1 https://github.com/apple/swift.git
+	git clone --depth=1 https://github.com/swiftlang/swift.git
 
 .PHONY: update
 update: swift
-	swift/utils/update-checkout --clone --skip-history
+	./swift/utils/update-checkout --clone --skip-history
 
 .PHONY: clean
 clean:
@@ -40,14 +40,14 @@ apply-patches: .apply-patches
 # See comments in script.
 .PHONY: build
 build: apply-patches
-	scripts/build-swift.sh
+	./scripts/build-swift.sh
 
 # The last `cmake -G Ninja` command is for building swift.
 # Useful to configure IDE such as CLion.
-# See <https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md#other-ides-setup>.
+# See <https://github.com/swiftlang/swift/blob/main/docs/HowToGuides/GettingStarted.md#other-ides-setup>.
 .PHONY: cmake-options
 cmake-options: apply-patches
-	scripts/build-swift.sh --dry-run --reconfigure 2>/dev/null \
+	./scripts/build-swift.sh --dry-run --reconfigure 2>/dev/null \
 	| grep "cmake -G Ninja" \
 	| tail -n 1 \
 	| sed -E 's/.*cmake -G Ninja //' \

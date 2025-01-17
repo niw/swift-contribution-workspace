@@ -2,7 +2,7 @@ Swift contribution workspace
 ============================
 
 This repository is a simple workspace include toolings on macOS for
-contributing to [Swift](https://github.com/apple/swift) and its related
+contributing to [Swift](https://github.com/swiftlang/swift) and its related
 project.
 
 Usage
@@ -69,7 +69,7 @@ To build swift, run
 
 ### With using `sccache`
 
-See <https://github.com/apple/swift/blob/master/docs/DevelopmentTips.md>
+See <https://github.com/swiftlang/swift/blob/master/docs/DevelopmentTips.md>
 for the details.
 
 To build swift, run
